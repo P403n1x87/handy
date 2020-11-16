@@ -1,8 +1,33 @@
+from math import sqrt
+
 import cv2
 import mediapipe as mp
+from pynput.mouse import Controller
+
+
+import tkinter as tk
+
+root = tk.Tk()
+
+W = root.winfo_screenwidth()
+H = root.winfo_screenheight()
+
+
+mouse = Controller()
 
 mp_drawing = mp.solutions.drawing_utils
 mp_hands = mp.solutions.hands
+HL = mp.solutions.hands.HandLandmark
+
+# for _ in mp_hands.HAND_CONNECTIONS:
+#     print(_)
+
+
+def dist(lm1, lm2):
+    dx = lm1.x - lm2.x
+    dy = lm1.y - lm2.y
+
+    return sqrt(dx * dx + dy * dy)
 
 
 # For webcam input:
@@ -13,11 +38,7 @@ while cap.isOpened():
     if not success:
         break
 
-    # Flip the image horizontally for a later selfie-view display, and convert
-    # the BGR image to RGB.
     image = cv2.cvtColor(cv2.flip(image, 1), cv2.COLOR_BGR2RGB)
-    # To improve performance, optionally mark the image as not writeable to
-    # pass by reference.
     image.flags.writeable = False
     results = hands.process(image)
 
@@ -26,6 +47,14 @@ while cap.isOpened():
     image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
     if results.multi_hand_landmarks:
         for hand_landmarks in results.multi_hand_landmarks:
+            wrist = hand_landmarks.landmark[HL.WRIST]
+            index_tip = hand_landmarks.landmark[HL.INDEX_FINGER_TIP]
+            pinky_tip = hand_landmarks.landmark[HL.PINKY_TIP]
+            middle_tip = hand_landmarks.landmark[HL.MIDDLE_FINGER_TIP]
+            ring_tip = hand_landmarks.landmark[HL.RING_FINGER_TIP]
+
+            mouse.position = (W * wrist.x, H * wrist.y)
+
             mp_drawing.draw_landmarks(image, hand_landmarks, mp_hands.HAND_CONNECTIONS)
     cv2.imshow("MediaPipe Hands", image)
     if cv2.waitKey(5) & 0xFF == 27:
