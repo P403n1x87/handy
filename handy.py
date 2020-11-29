@@ -53,7 +53,7 @@ while cap.isOpened():
             middle_tip = hand_landmarks.landmark[HL.MIDDLE_FINGER_TIP]
             ring_tip = hand_landmarks.landmark[HL.RING_FINGER_TIP]
 
-            mouse.position = (W * wrist.x, H * wrist.y)
+            mouse.position = (W * (wrist.x-0.2) * 1.5, H * (wrist.y-0.2) * 1.5)
 
             mp_drawing.draw_landmarks(image, hand_landmarks, mp_hands.HAND_CONNECTIONS)
     cv2.imshow("MediaPipe Hands", image)

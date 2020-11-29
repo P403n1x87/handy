@@ -1,38 +1,37 @@
 [[package]]
-category = "main"
-description = "Abseil Python Common Libraries, see https://github.com/abseil/abseil-py."
 name = "absl-py"
+version = "0.11.0"
+description = "Abseil Python Common Libraries, see https://github.com/abseil/abseil-py."
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.11.0"
 
 [package.dependencies]
 six = "*"
 
 [[package]]
-category = "main"
-description = "A backport of the dataclasses module for Python 3.6"
 name = "dataclasses"
-optional = false
-python-versions = "*"
 version = "0.6"
+description = "A backport of the dataclasses module for Python 3.6"
+category = "main"
+optional = false
+python-versions = "*"
 
 [[package]]
-category = "main"
-description = "Bindings to the Linux input handling subsystem"
-marker = "sys_platform in \"linux\""
 name = "evdev"
+version = "1.3.0"
+description = "Bindings to the Linux input handling subsystem"
+category = "main"
 optional = false
 python-versions = "*"
-version = "1.3.0"
 
 [[package]]
-category = "main"
-description = "MediaPipe is the simplest way for researchers and developers to build world-class ML solutions and applications for mobile, edge, cloud and the web."
 name = "mediapipe"
+version = "0.8.0"
+description = "MediaPipe is the simplest way for researchers and developers to build world-class ML solutions and applications for mobile, edge, cloud and the web."
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.8.0"
 
 [package.dependencies]
 absl-py = "*"
@@ -41,128 +40,116 @@ numpy = "*"
 opencv-python = ">=3.4.0,<4.0.0"
 protobuf = ">=3.11.4"
 six = "*"
-wheel = "*"
 
 [[package]]
-category = "main"
-description = "NumPy is the fundamental package for array computing with Python."
 name = "numpy"
-optional = false
-python-versions = ">=3.6"
 version = "1.19.4"
-
-[[package]]
+description = "NumPy is the fundamental package for array computing with Python."
 category = "main"
-description = "Wrapper package for OpenCV python bindings."
-name = "opencv-python"
 optional = false
 python-versions = ">=3.6"
-version = "3.4.11.45"
 
 [[package]]
+name = "opencv-python"
+version = "3.4.11.45"
+description = "Wrapper package for OpenCV python bindings."
 category = "main"
-description = "Protocol Buffers"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+numpy = ">=1.13.3"
+
+[[package]]
 name = "protobuf"
+version = "3.14.0"
+description = "Protocol Buffers"
+category = "main"
 optional = false
 python-versions = "*"
-version = "3.14.0"
 
 [package.dependencies]
 six = ">=1.9"
 
 [[package]]
-category = "main"
-description = "Monitor and control user input devices"
 name = "pynput"
+version = "1.7.1"
+description = "Monitor and control user input devices"
+category = "main"
 optional = false
 python-versions = "*"
-version = "1.7.1"
 
 [package.dependencies]
-evdev = ">=1.3"
-pyobjc-framework-Quartz = ">=3.0"
-python-xlib = ">=0.17"
+evdev = {version = ">=1.3", markers = "sys_platform in \"linux\""}
+pyobjc-framework-Quartz = {version = ">=3.0", markers = "sys_platform == \"darwin\""}
+python-xlib = {version = ">=0.17", markers = "sys_platform in \"linux\""}
 six = "*"
 
 [[package]]
-category = "main"
-description = "Python<->ObjC Interoperability Module"
-marker = "sys_platform == \"darwin\""
 name = "pyobjc-core"
+version = "7.0"
+description = "Python<->ObjC Interoperability Module"
+category = "main"
 optional = false
 python-versions = ">=3.6"
-version = "6.2.2"
 
 [[package]]
-category = "main"
-description = "Wrappers for the Cocoa frameworks on macOS"
-marker = "sys_platform == \"darwin\""
 name = "pyobjc-framework-cocoa"
+version = "7.0"
+description = "Wrappers for the Cocoa frameworks on macOS"
+category = "main"
 optional = false
 python-versions = ">=3.6"
-version = "6.2.2"
 
 [package.dependencies]
-pyobjc-core = ">=6.2.2"
+pyobjc-core = ">=7.0"
 
 [[package]]
-category = "main"
-description = "Wrappers for the Quartz frameworks on macOS"
-marker = "sys_platform == \"darwin\""
 name = "pyobjc-framework-quartz"
+version = "7.0"
+description = "Wrappers for the Quartz frameworks on macOS"
+category = "main"
 optional = false
 python-versions = ">=3.6"
-version = "6.2.2"
 
 [package.dependencies]
-pyobjc-core = ">=6.2.2"
-pyobjc-framework-Cocoa = ">=6.2.2"
+pyobjc-core = ">=7.0"
+pyobjc-framework-Cocoa = ">=7.0"
 
 [[package]]
-category = "main"
-description = "Python X Library"
-marker = "sys_platform in \"linux\""
 name = "python-xlib"
+version = "0.29"
+description = "Python X Library"
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.28"
 
 [package.dependencies]
 six = ">=1.10.0"
 
 [[package]]
-category = "main"
-description = "Python 2 and 3 compatibility utilities"
 name = "six"
+version = "1.15.0"
+description = "Python 2 and 3 compatibility utilities"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
-version = "1.15.0"
 
 [[package]]
-category = "main"
-description = "A built-package format for Python"
-name = "wheel"
-optional = false
-python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
-version = "0.35.1"
-
-[package.extras]
-test = ["pytest (>=3.0.0)", "pytest-cov"]
-
-[[package]]
-category = "main"
-description = "Python X Library"
 name = "xlib"
+version = "0.21"
+description = "Python X Library"
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.21"
 
 [package.dependencies]
 six = ">=1.10.0"
 
 [metadata]
-content-hash = "e8c819ad6608cf0285569792ab3e4439a013456966959ffe56b3a66f2ce65470"
+lock-version = "1.1"
 python-versions = "^3.6"
+content-hash = "e8c819ad6608cf0285569792ab3e4439a013456966959ffe56b3a66f2ce65470"
 
 [metadata.files]
 absl-py = [
@@ -272,37 +259,27 @@ pynput = [
     {file = "pynput-1.7.1.tar.gz", hash = "sha256:5a5598bfb14322eff980ac6ca820635fce9028faa4f64a8e1581243aaf6785ee"},
 ]
 pyobjc-core = [
-    {file = "pyobjc-core-6.2.2.tar.gz", hash = "sha256:38e7b15a042439dadd18b28b78229e52fb882460fc16ddbae342b9972d5a827c"},
-    {file = "pyobjc_core-6.2.2-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:73938398559b718595076fce4921022f21983dd85ebace3ecbe6182697abe164"},
-    {file = "pyobjc_core-6.2.2-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:60d0c57de915b6ed91a9a26e3bdefdcaeb1288623c69f291338208c5a227d190"},
-    {file = "pyobjc_core-6.2.2-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:be312b7a0edb45dd8ea68e70f2b411b59677d4ceb513c48eace73cb78dbfd85f"},
-    {file = "pyobjc_core-6.2.2-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:47a89171d218905dbf13011b1a7d698c246cb66fb5f14119bc0d9e039d0486fa"},
+    {file = "pyobjc-core-7.0.tar.gz", hash = "sha256:c4d3d7007451d0ddfbd70c3292b5e57e72228df0f309c236b96804db5c8aaf47"},
+    {file = "pyobjc_core-7.0-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:930ae3a0da8346d8c660acef78e93826254f2fe6b8c30a5792f498a3694a365c"},
+    {file = "pyobjc_core-7.0-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:9edca8235dec6ece603dc49af699d012a992f26a5ed9ea564c13167c81ce9cbb"},
 ]
 pyobjc-framework-cocoa = [
-    {file = "pyobjc-framework-Cocoa-6.2.2.tar.gz", hash = "sha256:75821b98fb789d240bea7034c4f96396b2eac3e7b02428b4be9101fc899b7fc3"},
-    {file = "pyobjc_framework_Cocoa-6.2.2-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:779299f73b8b5a1dd0973b3b16bd706e1f67df44edfb3f3ca6e5e873591c0efc"},
-    {file = "pyobjc_framework_Cocoa-6.2.2-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:45e3011efbd8ab4eb4c7ee1f55a8b5ecb41cf66fa797aff0e9454060781645a0"},
-    {file = "pyobjc_framework_Cocoa-6.2.2-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:2a5ab2e33cafe577592c31b2663f3b23f6e142fd717c8cf3826394a380cc4353"},
-    {file = "pyobjc_framework_Cocoa-6.2.2-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:6f5e1d59f6e1f4be40dedf051925b8d90c561657c9ec2453652af033fe5c2bf0"},
+    {file = "pyobjc-framework-Cocoa-7.0.tar.gz", hash = "sha256:b078ac6debcfaedbb06c27d8776520bf41598015e7bbf3a3a97e463567329497"},
+    {file = "pyobjc_framework_Cocoa-7.0-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:ecdf0265f85310c8d7efe30b26c7fe9aaac8879ea179f1649153426ebac56948"},
+    {file = "pyobjc_framework_Cocoa-7.0-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:acb1bf4153d8f26d9f95a1a574feb4a8ee17bafe82cbe3e000ea11c3d12a9610"},
 ]
 pyobjc-framework-quartz = [
-    {file = "pyobjc-framework-Quartz-6.2.2.tar.gz", hash = "sha256:5a56cfc0289061eaf33f04e3c73e749e04f177b0c1ee8749aa46e87d1e897cda"},
-    {file = "pyobjc_framework_Quartz-6.2.2-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:56d183dc32b11f15ceb0833a2a24953d1212264f07c274e2b8878e691eb72472"},
-    {file = "pyobjc_framework_Quartz-6.2.2-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:a57c7f50286d96ee7b9051c657a8607f0449949891cf0697be3efac76a97be7e"},
-    {file = "pyobjc_framework_Quartz-6.2.2-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:552b15eb409f87d34870345feabe6695375a031d8c4063f175dbaa3422005160"},
-    {file = "pyobjc_framework_Quartz-6.2.2-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:15f3c7b50d0543f66b927e28cd336c1a6962d58c9808799f49dcf30e4a1a13c2"},
+    {file = "pyobjc-framework-Quartz-7.0.tar.gz", hash = "sha256:7dc3c8f8593b869b504e091bf95cee58fcb79269af971e88ff4fa67fb597b36a"},
+    {file = "pyobjc_framework_Quartz-7.0-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:aa053f13906d76c84fc8fef353da90012c3808b9dc3a91379a63d8f2c924fee7"},
+    {file = "pyobjc_framework_Quartz-7.0-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:aedcf1864a43bd0509e3ae237c9b9da0792e321bae8e446ed3e6d4beb9abb427"},
 ]
 python-xlib = [
-    {file = "python-xlib-0.28.tar.gz", hash = "sha256:425f766173cdb30d0d61b416342ebecf312a1bf16c4d72ecd26b04667496067f"},
-    {file = "python_xlib-0.28-py2.py3-none-any.whl", hash = "sha256:c0e9878ef936d9b8e331976f24bdcc0b1a03eb957401c7cd48047ba7c69dc922"},
+    {file = "python-xlib-0.29.tar.gz", hash = "sha256:e4bcb756f4aa05be7b82ee21de0ba04d73414018727b42ebd9fbcf409ea75d13"},
+    {file = "python_xlib-0.29-py2.py3-none-any.whl", hash = "sha256:044095d1b1a5eab5a79f8d0b66f811a9ac6acd038dd3bae00cb3dbe90b32a7e3"},
 ]
 six = [
     {file = "six-1.15.0-py2.py3-none-any.whl", hash = "sha256:8b74bedcbbbaca38ff6d7491d76f2b06b3592611af620f8426e82dddb04a5ced"},
     {file = "six-1.15.0.tar.gz", hash = "sha256:30639c035cdb23534cd4aa2dd52c3bf48f06e5f4a941509c8bafd8ce11080259"},
-]
-wheel = [
-    {file = "wheel-0.35.1-py2.py3-none-any.whl", hash = "sha256:497add53525d16c173c2c1c733b8f655510e909ea78cc0e29d374243544b77a2"},
-    {file = "wheel-0.35.1.tar.gz", hash = "sha256:99a22d87add3f634ff917310a3d87e499f19e663413a52eb9232c447aa646c9f"},
 ]
 xlib = [
     {file = "xlib-0.21-py2.py3-none-any.whl", hash = "sha256:8eee67dad83ef4b82bbbfa85d51eeb20c79d12b119fe25aa1d27bd602ff82212"},
